@@ -5,8 +5,45 @@
     <title>App Project</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 </head>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=2">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    .mySlides {
+        display: none;
+    }
+</style>
 <body>
-    <h1>I am Groot (Translation: "Greetings and Salutations!")</h1>
-    <p>I am Groot (Translation: "I am becoming a website")</p>
+    <div style="text-align: center">
+        <h1>I am Groot (Translation: "Greetings and Salutations!")</h1>
+        <p>I am Groot (Translation: "I am becoming a website")</p>
+    </div>
+<div class="w3-content w3-section" style="max-width:500px">
+    <img class="mySlides" src="https://www.sideshowtoy.com/wp-content/uploads/2017/04/marvel-guardians-of-the-galaxy-groot-life-size-figure-hot-toys-feature-903025.jpg"
+        style="width:100%">
+    <img class="mySlides" src="https://www.sideshowtoy.com/wp-content/uploads/2018/03/marvel-guardian-of-the-galaxy-vol2-groot-life-size-figure-hot-toys-feature-903344.jpg"
+        style="width:100%">
+    <img class="mySlides" src="https://i.ytimg.com/vi/FAciZRkOKQs/maxresdefault.jpg" style="width:100%">
+    <img class="mySlides" src="https://vignette.wikia.nocookie.net/weeklyplanet/images/d/d3/Groot.jpg/revision/latest?cb=20170430212107"
+        style="width:100%">
+</div>
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+</script>
+
 </body>
 </html>
