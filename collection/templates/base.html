@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title><!-- we want to override page titles -->
+            {% block title %}
+                The Playbook
+            {% endblock title %}    
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        {% block header %}{% endblock header %}
+    </head>
+    <body>
+        <header>
+            <h1>Navigation</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- as well as override content bits -->
+        {% block content %}{% endblock content %}
+        {% block footer %}{% endblock footer%}
+    </body>
+</html>

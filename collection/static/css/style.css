@@ -2,9 +2,12 @@
     font: arial;
 }
 body {
-    background-color: rgb(36, 100, 52);
+    background-color: rgb(124, 124, 145);
 }
 h1 {
+    color: white;
+}
+h2 {
     color: white;
 }
 p {
