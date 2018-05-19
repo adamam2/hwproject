@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Development and Runtime - {{ block.super }}
+{% endblock title %}
+
+
+{% block content %}
+<h1>Setup and Environment</h1>
+<p>Using Command Line</p>
+
+<font color="white">
+   
+    <h2>Initialize Virtual Environment</h2>
+    <p>
+        <ol>
+            <li>
+                <b>
+                    <font color="black">cd</font>
+                </b> into the top level project folder with your project's
+                <b>manage.py</b> file</li>
+            <li>Activate the virtual environment
+                <b>
+                    <font color="black">$ source venv/bin/activate</font>
+                </b>
+            </li>
+            <li>Start Local Server
+                <b>
+                    <font color="black">$ python manage.py runserver</font>
+                </b>
+            </li>
+        </ol>
+    </p>
+    <h2>Initialize Git</h2>
+    <p>
+        <ol>
+            <li>
+                <b>
+                    <font color="black">$ git init</font>
+                </b> starts the local repository (Note: start from your top level project folder)</li>
+            <li>
+                <b>
+                    <font color="black">$ git status</font>
+                </b> shows the status of your current project</li>
+            <li>
+                <b>
+                    <font color="black">$ git add [file] or .</font>
+                </b> adds files to be tracked (Note: add a space before the .)</li>
+            <li>
+                <b>
+                    <font color="black">$ git commit [file]</font>
+                </b> commits the changes files - use when you've hit a good state. Generally, you'll want to commit all files
+                and add a message, so you can use
+                <b>
+                    <font color="black">$ git commit -a -m "Message"</font>
+                </b> to do that</li>
+            <li>
+                <b>
+                    <font color="black">$ git push</font>
+                </b> will push everything from your master to your cloud git repository (Note: You must setup first in Github,
+                Gitlab, etc.)</li>
+        </ol>
+    </p>
+    <h2>Unlock Git</h2>
+    <p>
+        <ol>
+            <li>
+                <b>
+                    <font color="black">$ rm -f ./.git/index.lock</font>
+                </b>
+            </li>
+        </ol>
+    </p>
+    
+</font>
+{% endblock content %}

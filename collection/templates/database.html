@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Database - {{ block.super }}
+{% endblock title %}
+
+
+{% block content %}
+    <h1>Database</h1>
+    <p>Setting up initial database, and scaling for extended data needs.</p>
+    
+    <font color="white">
+        
+        <h2>Database Migrations</h2>
+        <p>
+            <h3>Initial Setup</h3>
+            <ol>
+                <li>Initial Migration
+                    <b>
+                        <font color="black">$ python manage.py makemigrations</font>
+                    </b>
+                </li>
+                <li>Apply Migration
+                    <b>
+                        <font color="black">$ python manage.py migrate</font>
+                    </b>
+                </li>
+            </ol>
+            <h3>Future Migrations</h3>
+            <ol>
+                <li>Apply Migration
+                    <b>
+                        <font color="black">$ python manage.py migrate</font>
+                    </b>
+                </li>
+            </ol>
+        </p>
+    </font>
+{% endblock content %}

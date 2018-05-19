@@ -1,8 +1,10 @@
 * {
     font: arial;
+    text-align: center;
+    text-align: justify;
 }
 body {
-    background-color: rgb(124, 124, 145);
+    background-color: rgb(165, 165, 247);
 }
 h1 {
     color: white;

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Access Management - {{ block.super }}
+{% endblock title %}
+
+
+{% block content %}
+<h1>Creating Users and Access Management</h1>
+<p>Using Command Line</p>
+
+<font color="white">
+   
+    <h2>Create a superuser</h2>
+    <p>
+        <ol>
+            <li>
+                <b>
+                    <font color="black">$ python manage.py createsuperuser</font>
+                </b>
+            </li>
+        </ol>
+    </p>
+</font>
+{% endblock content %}
