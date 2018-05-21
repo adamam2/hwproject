@@ -27,5 +27,9 @@ urlpatterns = [
          name='accessmanagement'),
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
     path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
+    path('reference/', TemplateView.as_view(template_name='reference.html'),
+         name='reference'),
+    path('downloads/', TemplateView.as_view(template_name='downloads.html'),
+         name='downloads'),
     path('admin/', admin.site.urls),
 ]
