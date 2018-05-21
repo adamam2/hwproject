@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    SSH Key Creation - {{ block.super }}
+{% endblock title %}
+
+
+{% block content %}
+<h1>SSH Key Creation</h1>
+<p>Setup an SSH Key using Terminal: <a href="https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html#SetupanSSHkey-ssh2" target="_blank">Set up an SSH Key</a>
+    <ul><li>NOTE: Can leave passphrase blank</li></ul>
+    <ul><li>NOTE: SSH key will automatically be placed int he proper folder location</li></ul>
+    <ul>
+        <li>NOTE:
+        <li>The contents of the file <b>~/.ssh/id_rsa.pub</b> is the public key
+            <li>$ cat ~/.ssh/id_rsa.pub to view the public key</li>
+        <li>The contents of the file <b>~/.ssh/id_rsa</b> is the private key</b></li>
+        </li>
+    </ul>
+
+{% endblock content %}
