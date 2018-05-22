@@ -7,9 +7,79 @@
 
 {% block content %}
 <h1>Commands</h1>
+<p>A reference of common commands that will be used from Terminal Command Line.</p>
 
 <font color="white">
+    
 
+    <h2>General Command Line</h2>
+    <h3>
+        <p><a href="https://hellowebbooks.com/learn-command-line/" target="_blank">Learn Command Line</a></p>
+    </h3>
+    <table>
+        <tr>
+            <th>Command</th>
+            <th>Description</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td>$ cd <i>directoryname</i></td>
+            <td>Change directory</td>
+            <td>You can move multiple directories by entering the path. Ex. directory1/directory2</td>
+        </tr>
+        <tr>
+            <td>$ cd..</td>
+            <td>Move back up a directory</td>
+            <td>You can move up multiple directories by repeating the command. Ex. <b>$ cd../..</b></td>
+        </tr>
+        <tr>
+            <td>$ ls</td>
+            <td>List files in your current directory</td>
+            <td><ul><li>Type <b>$ ls -a</b> to view hidden directories</li></ul></td>
+        </tr>
+        <tr>
+            <td>$ touch <i>filename</i></td>
+            <td>Will create a new file in your current directory.</td>
+            <td>ex. <b>$ touch test.py</b></td>
+        </tr>
+        <tr>
+            <td>$ mv</td>
+            <td>Move a file from one directory to another, or move a directory.</td>
+            <td><ul><li>File ex. <b>$ mv NAMEOFFILE WHERETOMOVEIT</b></li>
+            </ul><ul><li>Directory ex. <b>% mv NAMEOFFILE NAMEOFDIRECTORY</b> from the directory to move it to.</li></ul>
+            <ul><li>You can move back with the ../ command</li></ul></td>
+        </tr>
+        <tr>
+            <td>$ cp</td>
+            <td>Copy a file.</td>
+            <td>ex. <b>$ cp NAMEOFFILETOCOPY NAMEOFNEWFILE</b></td>
+        </tr>
+        <tr>
+            <td>$ rm</td>
+            <td>Delete files or directories</td>
+            <td>ex. <b>$ rm FILENAME</b></td>
+        </tr>
+        <tr>
+            <td>$ mkdir</td>
+            <td>Make a new directory in your current directory location.</td>
+            <td>ex. <b>$ mkdir test</b></td>
+        </tr>
+        <tr>
+            <td>$ </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>$ </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>$ </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
     <h2>Python</h2>
     <table>
         <tr>
@@ -97,34 +167,35 @@
             <th>Notes</th>
         </tr>
         <tr>
-            <td>$ </td>
-            <td></td>
+            <td>$ git init</td>
+            <td>Starts the local repository.</td>
+            <td>Start from your top level project folder</td>
+        </tr>
+        <tr>
+            <td>$ git status</td>
+            <td>Shows the status of your current project.</td>
             <td></td>
         </tr>
         <tr>
-            <td>$ </td>
-            <td></td>
-            <td></td>
+            <td>$ git add [file] or .</td>
+            <td>Adds files to be tracked (Note: add a space before the .)</td>
+            <td>Using . will grab all files in your project. Add a space before the .</td>
         </tr>
         <tr>
-            <td>$ </td>
-            <td></td>
-            <td></td>
+            <td>$ commit [file]</td>
+            <td>Commits the changes files - use when you've hit a good state. Generally, you'll want to commit all files and add a message,
+            so you can use.</td>
+            <td>$ git commit -a -m "Message"</td>
         </tr>
         <tr>
-            <td>$ </td>
-            <td></td>
-            <td></td>
+            <td>$ git push</td>
+            <td>Will push everything from your master to your cloud git repository.</td>
+            <td>You must first setup your repository in BitBucket, Github, Gitlab, etc.</td>
         </tr>
         <tr>
-            <td>$ </td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>$ </td>
-            <td></td>
-            <td></td>
+            <td>$ rm -f ./.git/index.lock</td>
+            <td>Unlock Git.</td>
+            <td>Use if you receive a message that Git is unable to push due to a lock.</td>
         </tr>
     </table>
 
