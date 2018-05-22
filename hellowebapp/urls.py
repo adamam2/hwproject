@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import include, path
+from django.urls import incude, path
 from django.contrib import admin
 from django.views.generic import TemplateView
 from collection import views
@@ -39,7 +39,7 @@ urlpatterns = [
          name='sshkey'),
     path('downloads/', TemplateView.as_view(template_name='downloads.html'),
          name='downloads'),
-    path('concepts/<slug>', views.concept_detail, name='concept_detail'),
+    path('concepts/<slug>/', views.concept_detail, name='concept_detail'),
     path('concepts/<slug>/edit/', views.edit_concept, name='edit_concept'),
     path('admin/', admin.site.urls),
 ]

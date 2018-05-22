@@ -33,8 +33,9 @@ def index(request):
 def concept_detail(request, slug):
     concept = Concept.objects.get(slug=slug)
     return render(request, 'concepts/concept_detail.html', { 
-        'concept': concept, 
+        'concept': concept,
     })
+
 
 def edit_concept(request, slug):
     concept = Concept.objects.get(slug=slug)
