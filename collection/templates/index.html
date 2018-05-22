@@ -25,12 +25,14 @@
 
 
         <!--This is a test of humanize -->
-        <p>there are {{ number|apnumber }} Concepts!</p>
-        <!--This is a test of template tags -->
-        <p>This is my name: {{ thing|truncatewords:1 }}</p>
-        <!--This is a test of lorem -->
+        {% for concept in concepts %}
+        <h2>{{ concept.name }}</h2>
+        <p>{{ concept.description }}</p>
+        {% endfor %}
+
+
         <p>{% lorem 2 p %}</p>
-        <font color="white">
+       
         
 
 {% endblock content %}

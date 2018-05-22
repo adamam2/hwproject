@@ -6,7 +6,7 @@ from collection.models import Concept
 # and setup automated slug creation
 class ConceptAdmin(admin.ModelAdmin):
     model = Concept
-    list_display = ('name', 'description',)
+    list_display = ('name', 'description', 'area',)
     prepopulated_fields = {'slug': ('name',)}
 
 # and register your model
