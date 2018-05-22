@@ -33,6 +33,8 @@ urlpatterns = [
     path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
     path('reference/', TemplateView.as_view(template_name='reference.html'),
          name='reference'),
+    path('commands/', TemplateView.as_view(template_name='commands.html'),
+         name='commands'),
     path('sshkey/', TemplateView.as_view(template_name='sshkey.html'),
          name='sshkey'),
     path('downloads/', TemplateView.as_view(template_name='downloads.html'),
