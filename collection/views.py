@@ -17,17 +17,20 @@ def index(request):
         'concepts': concepts,
     })
 
-
-
 #def index(request):
 #   concepts = Concept.objects.filter(area__contains='test').order_by('name')
 #    return render(request, 'index.html', {
 #        'concepts': concepts,
 #    })
 
-
 #def database(request):
 #   concepts = Concept.objects.filter(area='test2').order_by('name')
 #    return render(request, 'database.html', {
 #        'concepts': concepts,
 #    })
+
+def concept_detail(request, slug):
+    concept = Concept.objects.get(slug=slug)
+    return render(request, 'concepts/concept_detail.html', { 
+        'concept': concept, 
+    })

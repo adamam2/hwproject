@@ -37,5 +37,6 @@ urlpatterns = [
          name='sshkey'),
     path('downloads/', TemplateView.as_view(template_name='downloads.html'),
          name='downloads'),
+    path('concepts/<slug>', views.concept_detail, name='concept_detail'),
     path('admin/', admin.site.urls),
 ]

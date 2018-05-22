@@ -26,10 +26,13 @@
 
         <!--This is a test of humanize -->
         {% for concept in concepts %}
-        <h2>{{ concept.name }}</h2>
-        <p>{{ concept.description }}</p>
+            <h2><a href="{url 'concept_detail' slug=concept.slug %}">
+                {{ concept.name }}</a>
+            </h2>
+            <p>{{ concept.description }}</p>
         {% endfor %}
 
+    
 
         <p>{% lorem 2 p %}</p>
        
