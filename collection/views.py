@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from collection.forms import ConceptForm
 from collection.models import Concept
 
 # Return All from DB
@@ -34,3 +35,19 @@ def concept_detail(request, slug):
     return render(request, 'concepts/concept_detail.html', { 
         'concept': concept, 
     })
+
+def edit_concept(request, slug):
+    concept = Concept.objects.get(slug=slug)
+    form_class = ConceptForm
+    if request.method == 'POST':
+        form = form_class(data=request.POST, instance=concept)
+        if form.is_valid():
+            form.save()
+            return redirect('concept_detail', slug=concept.slug)
+
+    else:
+        form = form_class(instance=concept)
+        return render(request, 'concepts/edit_concept.html', {
+            'concept': concept,
+            'form': form,
+        })
