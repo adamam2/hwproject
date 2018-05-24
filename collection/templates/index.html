@@ -9,17 +9,21 @@
 {% block content %}
 
         <h1>The Playbook</h1>
-        <p>Django and Python Deverloper Playbook for Normies</p>
+        <p>Django and Python Developer Playbook for Normies</p>
 
         <p>This site has been designed to provide an overview of rapid prototyping using various developer tools, with a primary focus on Django and Python.</p>
         
         <p>
-            <img src="{% static 'images/django-hexbin.png' %}" alt="django"/>
+            <a href="https://www.djangoproject.com/" target="_blank">
+                <img src="{% static 'images/django-hexbin.png' %}" alt="django"/>
+            </a>
+            <a href="https://www.python.org/" target="_blank">
             <img src="{% static 'images/python_icon.png' %}" alt="python" />
+            </a>
         </p>
 
 
-
+        
 
 
 
@@ -33,9 +37,12 @@
             <p>{{ concept.description }}</p>
         {% endfor %}
 
-    
+        
+        {% for piechart in piecharts %}
+            {{ piechart }}
+        {% endfor %}
 
-        <p>{% lorem 2 p %}</p>
+        <!--<p>{% lorem 2 p %}</p>-->
        
         
 

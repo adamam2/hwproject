@@ -52,3 +52,10 @@ def edit_concept(request, slug):
             'concept': concept,
             'form': form,
         })
+
+#view for piechart in pie.py
+def pie_chart(request):
+    piechart = Piechart.objects.all()
+    return render(request, 'index.html', {
+        'piecharts': piecharts,
+    })
