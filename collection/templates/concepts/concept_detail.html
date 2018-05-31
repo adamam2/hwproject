@@ -8,11 +8,17 @@
     
         <h1>{{ concept.name }}</h1>
         <p>{{ concept.description }}</p>
+        <p>{{ concept.user }}</p>
     
 
         <p>Django and Python Deverloper Concepts for the Noob</p>
 
-        <a href="{% url 'edit_concept' slug=concept.slug %}"> Edit me!</a>
+        
+        {% if user == concept.user %}
+            <p>
+                <a href="{% url 'edit_concept' slug=concept.slug %}"> Edit me!</a>
+            </p>
+        {% endif %}
 
         <p>{% lorem 2 p %}</p>
        

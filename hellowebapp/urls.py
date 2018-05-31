@@ -25,6 +25,7 @@ from django.contrib.auth.views import (
     password_change,
     password_change_done,
 )
+from collection.backends import MyRegistrationView
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -73,6 +74,12 @@ urlpatterns = [
     path('accounts/password/change/done', password_change_done,
          {'template_name': 'registration/password_change_done.html'},
          name="password_change_done"),
+
+
+    path('accounts/register/', MyRegistrationView.as_view(),
+        name="registration_register"),
+    path('accounts/create_concep', views.create_concept,
+        name="registration_create_concept"),
     
     path('admin/', admin.site.urls),
 ]
