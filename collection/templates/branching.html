@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Git Branch and Merge - {{ block.super }}
+{% endblock title %}
+
+
+{% block content %}
+<h1>Git Branch and Merge</h1>
+<h2>Using Command Line</h2>
+<font color="white">
+
+
+<h4>Branching (Update Local Repo)</h4>
+
+<p>
+<ol><li><b>cd</b> into folder with local repository</li></ol>
+<ol><li><b>$ git branch</b> will follow the remote branch with latest code
+    <ul><li><b>$ git checkout [branch name]</b> if local</li></ul>
+    <ul><li><b>$ git checkout --track origin/[branch name]</b> if not local</li></ul>    
+</li></ol>
+<ol><li><b>$ git pull</b> is a combo of fetch/pull from remote to update local</li></ol>
+<ol><li><b>$ git log</b> shows logs/notes/messages for historical changes</li></ol>
+</p>
+
+<h4>Start Own Branch</h4>
+<p>
+    <ol><li><b>q</b> will quit the local repo update and return to command prompt</li></ol>
+    <ol><li><b>$ git branch [new branch name]</b> (with no spaces, - only)</li></ol>
+    <ol><li><b>$ git branch</b></li></ol>
+    <ol><li><b>$ git checkout [new branch name]</b></li></ol>
+    <ol><li><b>$ git push origin [new branch name]</b> pushes new branch to remote</li></ol>
+</p>
+
+<h4>Delete Branch</h4>
+<p>
+    <ol><li><b>$ git branch -D [branch name]</b> deletes local branch. Need to ensure you've use <b>$ git checkout [name] 
+        to checkout another branch or main before you delete.
+    </b></li></ol>
+    <ol><li>Delete remote branch by logging into your remote host (ex. BitBucket, GitHub) and manually delete the branch.</li></ol><
+</p>
+
+</font>
+{% endblock content %}

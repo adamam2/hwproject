@@ -30,10 +30,10 @@
 
         <!--This is a test of humanize -->
         {% for concept in concepts %}
-            <h2><a href="{% url 'concept_detail' slug=concept.slug %}">
+            <h4><a href="{% url 'concept_detail' slug=concept.slug %}">
              {{ concept.name }}
             </a>
-            </h2>
+            </h4>
             <p>{{ concept.description }}</p>
         {% endfor %}
 

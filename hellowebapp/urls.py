@@ -41,5 +41,6 @@ urlpatterns = [
          name='downloads'),
     path('concepts/<slug>/', views.concept_detail, name='concept_detail'),
     path('concepts/<slug>/edit/', views.edit_concept, name='edit_concept'),
+    path('accounts/', include('registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
 ]
