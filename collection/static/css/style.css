@@ -1,5 +1,5 @@
 * {
-    font-family: sans-serif;
+    font-family: Arial, Verdana, sans-serif;
     text-align: center;
     text-align: justify;
 }
@@ -7,15 +7,18 @@ body {
     background-color: rgb(134, 134, 146);
 }
 h1 {
+    width: 100%;
+    background-color: red
     color: white;
 }
 h2 {
-    color: white;
+    color: black;
 }
 }
 h4 {
-    color: white;
+    color: black;
 }
 p {
-    color: white;
+    color: black;
+    width: 450px;
 }

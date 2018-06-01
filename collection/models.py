@@ -5,6 +5,7 @@ from django.db import models
 class Concept(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
+    long_description = models.TextField(null=False, blank=True, default='')
     area = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
 

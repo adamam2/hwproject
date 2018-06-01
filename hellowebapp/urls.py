@@ -80,7 +80,7 @@ urlpatterns = [
 
     # path('accounts/register/', MyRegistrationView.as_view(),
         # name="registration_register"),
-    # path('accounts/create_concep', views.create_concept,
+    # path('accounts/create_concept', views.create_concept,
         # name="registration_create_concept"),
     
 

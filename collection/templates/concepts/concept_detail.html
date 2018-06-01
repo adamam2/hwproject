@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 {% block title %}
     {{ concept.name }} - {{ block.super }}
 {% endblock title %}
@@ -7,20 +12,18 @@
 {% block content %}
     
         <h1>{{ concept.name }}</h1>
-        <p>{{ concept.description }}</p>
+                <p>
+                    <a href="{% url 'edit_concept' slug=concept.slug %}"> Edit me!<span class="glyphicon glyphicon-pencil"></span></a>
+                </p>
+        <h3>Subject Area:</h3>
+            <p>{{ concept.area }}</p>
+        <h3>Concept Description:</h3>
+            <p>{{ concept.description|safe }}</p> <!--Adding 'safe' to the field tells this it's okay to inject HTML-->
         <!-- <p>{{ concept.user }}</p> -->
-    
+        <h3>Concept:</h3>
+            <p>{{ concept.long_description|safe }}</p>
 
-        <p>Django and Python Deverloper Concepts for the Noob</p>
-
-        
-        <!-- {% if user == concept.user %}
-            <p>
-                <a href="{% url 'edit_concept' slug=concept.slug %}"> Edit me!</a>
-            </p>
-        {% endif %} -->
-
-        <p>{% lorem 2 p %}</p>
+        <!-- <p>{% lorem 2 p %}</p> -->
        
         
 
