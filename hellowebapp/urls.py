@@ -18,14 +18,14 @@ from django.urls import include, path
 from django.contrib import admin
 from django.views.generic import TemplateView, RedirectView
 from collection import views
-from django.contrib.auth.views import (
-    password_reset,
-    password_reset_done,
-    password_reset_confirm,
-    password_reset_complete,
-    password_change,
-    password_change_done,
-)
+# from django.contrib.auth.views import (
+#     password_reset,
+#     password_reset_done,
+#     password_reset_confirm,
+#     password_reset_complete,
+#     password_change,
+#     password_change_done,
+# )
 
 
 urlpatterns = [
@@ -53,29 +53,29 @@ urlpatterns = [
     path('concepts/<slug>/', views.concept_detail, name='concept_detail'),
     path('concepts/<slug>/edit/', views.edit_concept, name='edit_concept'),
     
-    #registration
-    path('accounts/', include('registration.backends.simple.urls')),
+    # #registration
+    # path('accounts/', include('registration.backends.simple.urls')),
     
-    #password reset
-    path('accounts/password/reset/', password_reset,
-        {'template_name': 'registration/password_reset_form.html'},
-        name="password_reset"),
-    path('accounts/password/reset/done/', password_reset_done,
-        {'template_name': 'registration/password_reset_done.html'},
-        name="password_reset_done"),
-    path('accounts/password/reset/<uidb64>/<token>/', password_reset_confirm,
-        {'template_name': 'registration/password_reset_confirm.html'},
-        name="password_reset_confirm"),
-    path('accounts/password/rest/done/', password_reset_complete,
-        {'template_name': 'registration/password_reset_complete.html'},
-        name="password_reset_complete"),
+    # #password reset
+    # path('accounts/password/reset/', password_reset,
+    #     {'template_name': 'registration/password_reset_form.html'},
+    #     name="password_reset"),
+    # path('accounts/password/reset/done/', password_reset_done,
+    #     {'template_name': 'registration/password_reset_done.html'},
+    #     name="password_reset_done"),
+    # path('accounts/password/reset/<uidb64>/<token>/', password_reset_confirm,
+    #     {'template_name': 'registration/password_reset_confirm.html'},
+    #     name="password_reset_confirm"),
+    # path('accounts/password/rest/done/', password_reset_complete,
+    #     {'template_name': 'registration/password_reset_complete.html'},
+    #     name="password_reset_complete"),
     
-    path('accounts/password/change/', password_change,
-        {'template_name': 'registration/password_change_form.html'},
-        name="password_change"),
-    path('accounts/password/change/done', password_change_done,
-         {'template_name': 'registration/password_change_done.html'},
-         name="password_change_done"),
+    # path('accounts/password/change/', password_change,
+    #     {'template_name': 'registration/password_change_form.html'},
+    #     name="password_change"),
+    # path('accounts/password/change/done', password_change_done,
+    #      {'template_name': 'registration/password_change_done.html'},
+    #      name="password_change_done"),
 
 
     # path('accounts/register/', MyRegistrationView.as_view(),
