@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 
 # Create your models here.
 class Concept(models.Model):
@@ -7,9 +7,6 @@ class Concept(models.Model):
     description = models.TextField()
     area = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
-    #this only allows 1 user per concept. # TODO find how to allow multiple users to own/edit
-    user = models.OneToOneField(User, on_delete=models.CASCADE,
-        blank=True, null=True) #this tells the db to allow blanks during migrate
 
 
 # TODO Build a Commands Data Model

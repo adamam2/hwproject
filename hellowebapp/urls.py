@@ -13,9 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+#from collection.backends import MyRegistrationView
 from django.urls import include, path
 from django.contrib import admin
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 from collection import views
 from django.contrib.auth.views import (
     password_reset,
@@ -25,7 +26,7 @@ from django.contrib.auth.views import (
     password_change,
     password_change_done,
 )
-from collection.backends import MyRegistrationView
+
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -48,13 +49,14 @@ urlpatterns = [
          name='sshkey'),
     path('downloads/', TemplateView.as_view(template_name='downloads.html'),
          name='downloads'),
+    path('concepts/', RedirectView.as_view(pattern_name='browse', permanent=True)),
     path('concepts/<slug>/', views.concept_detail, name='concept_detail'),
     path('concepts/<slug>/edit/', views.edit_concept, name='edit_concept'),
     
-    
+    #registration
     path('accounts/', include('registration.backends.simple.urls')),
     
-    
+    #password reset
     path('accounts/password/reset/', password_reset,
         {'template_name': 'registration/password_reset_form.html'},
         name="password_reset"),
@@ -76,10 +78,19 @@ urlpatterns = [
          name="password_change_done"),
 
 
-    path('accounts/register/', MyRegistrationView.as_view(),
-        name="registration_register"),
-    path('accounts/create_concep', views.create_concept,
-        name="registration_create_concept"),
+    # path('accounts/register/', MyRegistrationView.as_view(),
+        # name="registration_register"),
+    # path('accounts/create_concep', views.create_concept,
+        # name="registration_create_concept"),
     
+
+    #browse flow
+    path('browse/', RedirectView.as_view(pattern_name='browse', permanent=True)),
+    path('browse/name/',
+        views.browse_by_name, name="browse"),
+    path('browse/name/<initial>/',
+        views.browse_by_name, name="browse_by_name"),
+
+    #admin
     path('admin/', admin.site.urls),
 ]

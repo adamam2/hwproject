@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from collection.forms import ConceptForm
 from collection.models import Concept
-from django.template.defaultfilters import slugify
-from django.contrib.auth.decorators import login_required
-from django.http import Http404
+# from django.template.defaultfilters import slugify
+# from django.contrib.auth.decorators import login_required
+# from django.http import Http404
 
 # Return All from DB
 #def index(request):
@@ -39,11 +39,11 @@ def concept_detail(request, slug):
         'concept': concept,
     })
 
-@login_required
+# @login_required
 def edit_concept(request, slug):
     concept = Concept.objects.get(slug=slug)
-    if concept.user != request.user:
-        raise Http404
+    # if concept.user != request.user:
+    #     raise Http404
     form_class = ConceptForm
     if request.method == 'POST':
         form = form_class(data=request.POST, instance=concept)
@@ -59,22 +59,36 @@ def edit_concept(request, slug):
         })
 
 
-def create_concept(request):
-    from_class = ConceptForm
-    if request.method == 'POST':
-        form = form_class(request.POST)
-        if form.is_valid():
-            concept = form.save(commit=False)
-            concept.user = request.user
-            concept.slug = slugify(concept.name)
-            concept.save()
-            return redirect('concept_detail', slug=concept.slug)
-        else:
-            form = form_class()
+# def create_concept(request):
+#     from_class = ConceptForm
+#     if request.method == 'POST':
+#         form = form_class(request.POST)
+#         if form.is_valid():
+#             concept = form.save(commit=False)
+#             concept.user = request.user
+#             concept.slug = slugify(concept.name)
+#             concept.save()
+#             return redirect('concept_detail', slug=concept.slug)
+#         else:
+#             form = form_class()
 
-        return render(request, 'concept/create_concept', {
-            'form': form,
+#         return render(request, 'concept/create_concept', {
+#             'form': form,
+#         })
+
+
+def browse_by_name(request, initial=None):
+    if initial:
+        concepts = Concept.objects.filter(
+            name__istartswith=initial).order_by('name')
+    else:
+        concepts = Concept.objects.all().order_by('name')
+
+        return render(request, 'search/search.html', {
+            'concepts': concepts,
+            'initial': initial,
         })
+
 
 #view for piechart in pie.py
 # def pie_chart(request):
