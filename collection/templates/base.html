@@ -41,24 +41,24 @@
                     <li>
                         <a href="{% url 'browse' %}">Browse Concepts</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="{% url 'setup' %}">Getting Started</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="{% url 'development' %}">Development</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="{% url 'webdesign' %}">Web Design</a>
                     </li>
                     <li>
                         <a href="{% url 'appdesign' %}">App Design</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="{% url 'database' %}">Database</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="{% url 'accessmanagement' %}">User Access</a>
-                    </li>
+                    </li> -->
                     <!--<li>
                         <a href="{% url 'about' %}">About</a>
                     </li>
@@ -72,7 +72,7 @@
                         <a href="{% url 'downloads' %}">Downloads</a>
                     </li>
                     <li>
-                        <a href="{% url 'commands' %}">Commands</a>
+                        <a href="{% url 'commands' %}">Common Commands</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li>
@@ -91,6 +91,6 @@
         </header>
         <!-- as well as override content bits -->
         {% block content %}{% endblock content %}
-        {% block footer %}{% endblock footer%}
+        {% block footer %}Footer Placeholder{% endblock footer%}
     </body>
 </html>
