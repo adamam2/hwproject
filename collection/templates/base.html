@@ -378,12 +378,64 @@
         
         
         {% block content %}{% endblock content %}
+
+        
+
         {% block footer %}
             <div class="footer">
                 <a href="{% url 'home' %}"><b>HOME</b> | 
                 <a href="{% url 'about' %}"><b>ABOUT</b>
             </div>
         {% endblock footer%}
+
+         {% block secondaryfooter %}
+        <section>
+            <p>
+                <style>
+                    .column {
+                        float: left;
+                        width: 14.28%;
+                        padding: 5px;
+                    }
+        
+                    /* Clearfix (clear floats) */
+        
+                    .row::after {
+                        content: "";
+                        clear: both;
+                        display: table;
+                    }
+                </style>
+                <div class="center">
+                    <div class="row">
+                        <div class="column">
+                            <a href="https://www.djangoproject.com/" target="_blank">
+                                <img src="{% static 'images/django-hexbin.png' %}" height="50" width="50">
+                        </div>
+                        <div class="column">
+                            <a href="https://www.python.org/" target="_blank">
+                                <img src="{% static 'images/python_icon.png' %}" height="50" width="50">
+                        </div>
+                        <div class="column">
+                            <img src="{% static 'images/bitbucketlogo.png' %}" height="50" width="50">
+                        </div>
+                        <div class="column">
+                            <img src="{% static 'images/confluencelogo.png' %}" height="50" width="50">
+                        </div>
+                        <div class="column">
+                            <img src="{% static 'images/githublogo.png' %}" height="50" width="50">
+                        </div>
+                        <div class="column">
+                            <img src="{% static 'images/slacklogo.png' %}" height="50" width="50">
+                        </div>
+                        <div class="column">
+                            <img src="{% static 'images/trellologo.png' %}" height="50" width="50">
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </section>
+        {% endblock secondaryfooter %}
 
             <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
             <script type="text/javascript">

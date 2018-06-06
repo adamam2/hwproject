@@ -9,7 +9,7 @@
 
 {% block content %}
     <style>
-        html, p, img, h4 {
+        html, p, img, h4, section {
             text-align: center;
         }
     </style>
@@ -21,65 +21,8 @@
         <p>Browse our project pages for additional information: <a href="https://petcoalm.atlassian.net/wiki/spaces/BUSXS/pages/610336794/Team+SXSW" target="_blank">Team SXSW</a></a></p>
 
         <p>GitHub project: <a href="https://github.com/adamam2/hwproject" target="_blank">The Playbook</a></p>
-
+        <section>
         <p>
-           <!-- <div style="center">
-            <a href="https://www.djangoproject.com/" target="_blank">
-                <img src="{% static 'images/django-hexbin.png' %}" alt="django" 
-                style="margin-left: auto; margin-right: auto;" />
-            </a>
-            <a href="https://www.python.org/" target="_blank">
-            <img src="{% static 'images/python_icon.png' %}" alt="python" 
-            style="margin-left: auto; margin-right: auto;" />
-            </a>
-            </div> -->
-            <style>
-                        .column {
-                            float: left;
-                            width: 50%;
-                            padding: 20px;
-                        }
-
-                        /* Clearfix (clear floats) */
-                        .row::after {
-                            content: "";
-                            clear: both;
-                            display: table;
-                        }
-            </style>
-            <div class="row">
-                <div class="column">
-                    <a href="https://www.djangoproject.com/" target="_blank">
-                        <img src="{% static 'images/django-hexbin.png' %}" alt="django" style="width:100%">
-                </div>
-                <div class="column">
-                    <a href="https://www.python.org/" target="_blank">
-                        <img src="{% static 'images/python_icon.png' %}" alt="python" style="width:100%">
-                </div>
-            </div>
-        </p>
-
-
-        
-
-
-
-
-        <!--This is a test of humanize -->
-        <!-- {% for concept in concepts %}
-            <h4><a href="{% url 'concept_detail' slug=concept.slug %}">
-             {{ concept.name }}
-            </a>
-            </h4>
-            <p>{{ concept.description }}</p>
-        {% endfor %}
-
-        
-        {% for piechart in piecharts %}
-            {{ piechart }}
-        {% endfor %} -->
-
-        <!--<p>{% lorem 2 p %}</p>-->
        
         
 
