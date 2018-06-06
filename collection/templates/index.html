@@ -6,9 +6,14 @@
 {% endblock title %}
 
 
-{% block content %}
 
-        <h1>The Playbook</h1>
+{% block content %}
+    <style>
+        html, p, img, h4 {
+            text-align: center;
+        }
+    </style>
+        <h1>Welcome!</h1>
         <h4>Django and Python Developer Playbook for Normies, Noobs, Knuckledraggers, and Commonfolk.</h4>
 
         <p>This site has been designed to provide an overview of concepts utilized for rapid prototyping using various developer tools, with a primary focus on Django and Python.</p>
@@ -18,12 +23,40 @@
         <p>GitHub project: <a href="https://github.com/adamam2/hwproject" target="_blank">The Playbook</a></p>
 
         <p>
+           <!-- <div style="center">
             <a href="https://www.djangoproject.com/" target="_blank">
-                <img src="{% static 'images/django-hexbin.png' %}" alt="django"/>
+                <img src="{% static 'images/django-hexbin.png' %}" alt="django" 
+                style="margin-left: auto; margin-right: auto;" />
             </a>
             <a href="https://www.python.org/" target="_blank">
-            <img src="{% static 'images/python_icon.png' %}" alt="python" />
+            <img src="{% static 'images/python_icon.png' %}" alt="python" 
+            style="margin-left: auto; margin-right: auto;" />
             </a>
+            </div> -->
+            <style>
+                        .column {
+                            float: left;
+                            width: 50%;
+                            padding: 20px;
+                        }
+
+                        /* Clearfix (clear floats) */
+                        .row::after {
+                            content: "";
+                            clear: both;
+                            display: table;
+                        }
+            </style>
+            <div class="row">
+                <div class="column">
+                    <a href="https://www.djangoproject.com/" target="_blank">
+                        <img src="{% static 'images/django-hexbin.png' %}" alt="django" style="width:100%">
+                </div>
+                <div class="column">
+                    <a href="https://www.python.org/" target="_blank">
+                        <img src="{% static 'images/python_icon.png' %}" alt="python" style="width:100%">
+                </div>
+            </div>
         </p>
 
 
