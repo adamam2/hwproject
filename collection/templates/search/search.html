@@ -5,10 +5,20 @@
 {% endblock title %}
 
 {% block content %}
+    <style>
+        html,
+        p,
+        ul,
+        li,
+        h4 {
+            text-align: center;
+        }
+    </style>
+
     <h1>
         Browse Concepts {% if initial %} Starting with
         '{{ initial|title }}'{% endif %}
-    </h1>
+    </h1><br>
 
     <!-- {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
     <a href="{% url 'browse_by_name' initial=letter %}"
@@ -25,5 +35,5 @@
         {% empty %}
         <li>Sorry, no results!</li>
         {% endfor %}
-    </ul>
+    </ul><br>
 {% endblock content %}
