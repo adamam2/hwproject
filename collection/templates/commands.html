@@ -6,16 +6,23 @@
 
 
 {% block content %}
+    <style>
+        p {
+            text-align: center;
+            color: black;
+        }
+    </style>
+
 <h1>Commands</h1>
 <p>A reference of common commands that will be used from Terminal Command Line.</p>
 
-<font color="white">
+<font color="black">
     
 
     <h2>General Command Line</h2>
-    <h3>
-        <p><a href="https://hellowebbooks.com/learn-command-line/" target="_blank">Learn Command Line</a></p>
-    </h3>
+    
+    <p>Click to: <a href="https://hellowebbooks.com/learn-command-line/" target="_blank">Learn Command Line</a></p>
+    
     <table>
         <tr>
             <th>Command</th>
@@ -79,7 +86,8 @@
             <td></td>
             <td></td>
         </tr>
-    </table>
+    </table><br>
+
     <h2>Python</h2>
     <table>
         <tr>
@@ -122,7 +130,7 @@
             <td></td>
             <td></td>
         </tr>
-    </table>
+    </table><br>
     
     <h2>Django</h2>
     <table>
@@ -161,7 +169,7 @@
             <td></td>
             <td></td>
         </tr>
-    </table>
+    </table><br>
        
     
     <h2>Git</h2>
@@ -202,7 +210,7 @@
             <td>Unlock Git.</td>
             <td>Use if you receive a message that Git is unable to push due to a lock.</td>
         </tr>
-    </table>
+    </table><br>
 
     <h2>Docker</h2>
     <table>
@@ -241,7 +249,7 @@
             <td></td>
             <td></td>
         </tr>
-    </table>
+    </table><br>
 
     <h2>Homebrew</h2>
     <table>
@@ -280,7 +288,7 @@
             <td></td>
             <td></td>
         </tr>
-    </table>
+    </table><br>
     
 </font>
 {% endblock content %}
