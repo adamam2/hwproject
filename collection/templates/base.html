@@ -1,7 +1,11 @@
 {% load static %}
 <!doctype html>
-<html>
-    <head>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+
         <title><!-- we want to override page titles -->
             {% block title %}
                 The Playbook
@@ -10,6 +14,129 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
         <style>
+                    html,header, footer, body, nav, div, img, a,ul, li, h1, h2{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style-type: none;
+
+        }
+        * {
+            box-sizing: border-box;
+            font-family: arial;
+            
+        }
+        html {
+            font-size: 16px;
+            
+        }
+
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 500px) {
+            .column {
+                width: 100%;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            table-layout: auto;
+            <!--width: 640px;-->
+        }
+
+        th {
+            text-align: center;
+            padding: 3px;
+            width: 400px;
+            border: 1px solid #ddd;
+        }
+        td {
+            text-align: center;
+            padding: 3px;
+            width: 240px;
+            border: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .header {
+            background-color: white;
+            color: #ffffff;
+            padding: 15px;
+        }
+        .footer {
+            background-color: #0099cc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+        }
+        body {
+            background-color: white;
+            width: 100%;
+            margin:0 auto;
+            text-align: center;
+        }
+        a:link, a:visited {
+            color:#555;
+            font-weight: 700;
+            transition: .2s color ease-in-out;
+        }
+        a:hover, a:active{
+            color: #888;
+        }
+
+        main {
+            padding: 1.5rem;
+            line-height: 2.6rem;
+        }
+        section>p{
+            text-indent: 2.6rem;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            background-color: #0099cc;
+            max-width: 100%
+        }
+        h2 {
+            color: white;
+            text-align: center;
+            background-color: #add8e6;
+            max-width: 100%
+        }
+        h3 {
+            background-color: rgb(188, 232, 247);
+        }
+        h4 {
+
+        }
+        p {
+            font-color: black;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+         }
+            
             table {
                 font-family: arial, sans-serif;
                 border-collapse: collapse;
@@ -29,51 +156,196 @@
             }
 
             th {
-                color: white;
+                color: black;
+                text-align: center;
             }
 
             tr:nth-child(even) {
                 background-color: #dddddd;
             }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            .toggle-menu {
+            display: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 10px;
+        }
+
+        .center {
+            margin: auto;
+            width: 75%;
+            border: 3px;
+            padding: 5px;
+        }
+
+
+        .site-title img{
+            max-width: 100px;
+            display: inline-block;
+            vertical-align: middle;
+
+        }
+
+
+        .nav-list {
+            list-style-type: none;
+            display: flex;
+            flex-flow: row;
+            white-space: nowrap;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .nav-list li {
+            position: relative;
+
+        }
+
+        .nav-list li:not(.has-logo) a {
+            text-transform: uppercase;
+            display: block;
+            padding: 1rem;
+            color: black;
+            <!--height: 40px;-->
+            <!--line-height: 40px;-->
+            text-align: center;
+            list-style-type: none;
+        }
+
+        .nav-list li a:hover {
+            background-color: #add8e6;
+            transition: .2s color ease-in-out;
+        }
+
+        .nav-list ul{
+            position: absolute;
+            z-index: 1010;
+            background-color: #fff;
+            line-height: 2rem:
+            left: -9999px;
+        }
+
+        .nav-list ul a {
+            font-weight: normal;
+            display: block;
+            padding: 1rem 1rem;
+        }
+
+        .nav-list li:hover a + ul {
+            left: 0;
+            top: 100%;
+            color: black;
+            list-style-type: none;
+        }
+
+        .mobile-display {
+            display: none;
+            margin: 2rem;
+
+        }
+
+        @media only screen and (max-width: 58.75rem){
+            html {
+                font-size: 13px;
+            }
+            body {
+                width: 80%;
+            }
+            .has-logo {
+                display: none;
+            }
+            .mobile-display {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (max-width: 54.68rem){
+            .toggle-menu {
+                display: block;
+                max-width: -webkit-min-content;
+                max-width: -moz-min-content;
+                max-width: min-content;
+                margin: 1rem auto;
+                background-color: #ff0000;
+                text-align: center;
+                color: #fff !important;
+                padding: 1rem;
+                border-radius: .25rem;
+
+            }
+            .toggle-menu:hover {
+                background-color: #f92266;
+            }
+
+            .nav-list {
+                display: block;
+                width: 100%;
+                position: static;
+                line-height: 1rem;
+                z-index: 1012;
+                left: 0;
+                top: 0;
+                background-color: #fff;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .active {
+                max-height: 100%;
+                overflow: auto;
+            }
+
+            .nav-list ul {
+                position: static;
+                text-indent: 2rem;
+                z-index: 1013;
+            }
+
+            
+
+        }
+
+
         </style>
 
         {% block header %}{% endblock header %}
     </head>
     <body>
+    <div class="content">
+        <div align="center">
+        <!-- <div class="mobile-display">
+            <h3 class="site-title">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/python.svg.png' %}">
+                </a> -->
+                </a>
+            </h3>
+        </div>
+
         <header>
-            <h1>Navigation</h1>
+            <h1>The Rapid Prototype Playbook</h1>
             <nav>
-                <ul>
+                <a href="#" class="toggle-menu">&#9776;</a>
+                <ul class="nav-list nav-open" id="nav">
+                
                     <li>
-                        <a href="{% url 'home' %}">Home</a>
+                        <a href="{% url 'home' %}"><b>HOME</b>
+                        </a>
                     </li>
                     <li>
                         <a href="{% url 'browse' %}">Browse Concepts</a>
                     </li>
-                    <!-- <li>
-                        <a href="{% url 'setup' %}">Getting Started</a>
-                    </li> -->
-                    <!-- <li>
-                        <a href="{% url 'development' %}">Development</a>
-                    </li> -->
-                    <!-- <li>
-                        <a href="{% url 'webdesign' %}">Web Design</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'appdesign' %}">App Design</a>
-                    </li> -->
-                    <!-- <li>
-                        <a href="{% url 'database' %}">Database</a>
-                    </li> -->
-                    <!-- <li>
-                        <a href="{% url 'accessmanagement' %}">User Access</a>
-                    </li> -->
-                    <!--<li>
-                        <a href="{% url 'about' %}">About</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'contact' %}">Contact</a>
-                    </li>-->
                     <li>
                         <a href="{% url 'reference' %}">Reference</a>
                     </li>
@@ -83,12 +355,56 @@
                     <li>
                         <a href="{% url 'commands' %}">Common Commands</a>
                     </li>
+                    
+                <!-- </ul> -->
+                
+                    <!-- <li>
+                        <a href="{% url 'reference' %}">Reference</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'downloads' %}">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'commands' %}">Common Commands</a>
+                    </li>
 
-                </ul>
+                </ul> -->
             </nav>
         </header>
         <!-- as well as override content bits -->
+        
+        
         {% block content %}{% endblock content %}
-        {% block footer %}Footer Placeholder{% endblock footer%}
+        {% block footer %}
+            <div class="footer">
+                <a href="{% url 'home' %}">
+                    <b>HOME</b>
+            </div>
+        {% endblock footer%}
+
+            <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+            <script type="text/javascript">
+                  <!-- < !--src="https://code.jquery.com/jquery-3.3.1.js"-- > -->
+
+                      $(document).ready(function () {
+
+                          var ulNav = "#nav", openNav = "active";
+
+                          $('.toggle-menu').click(function (e) {
+
+                              if ($(ulNav).hasClass(openNav)) {
+                                  $(ulNav).removeClass(openNav);
+                              } else {
+                                  $(ulNav).addClass(openNav);
+                              }
+                              e.preventDefault();
+                          })
+                      })
+
+
+            </script>
+     
+        </div>
+    </div>
     </body>
 </html>
