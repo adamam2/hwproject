@@ -90,6 +90,8 @@ urlpatterns = [
         views.browse_by_name, name="browse"),
     path('browse/name/<initial>/',
         views.browse_by_name, name="browse_by_name"),
+    # path('browse/create_concept/',
+    #      views.create_concept, name="create_concept"),
 
     #admin
     path('admin/', admin.site.urls),

@@ -72,7 +72,7 @@ def edit_concept(request, slug):
 #         else:
 #             form = form_class()
 
-#         return render(request, 'concept/create_concept', {
+#         return render(request, 'concepts/create_concept.html', {
 #             'form': form,
 #         })
 
@@ -90,10 +90,4 @@ def browse_by_name(request, initial=None):
         })
 
 
-#view for piechart in pie.py
-# def pie_chart(request):
-    # piechart = Piechart.objects.all()
-    # return render(request, 'index.html', {
-        # 'piecharts': piecharts,
-    # })
 
