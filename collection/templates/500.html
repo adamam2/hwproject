@@ -5,7 +5,21 @@
 {% endblock title %} 
 
 {% block content %}
+    <style>
+        html,
+        p,
+        img,
+        h4,
+        section {
+            text-align: center;
+        }
+    </style>
     <h1>500 Error</h1>
     <p>You've run into an error!</p>
+    <p>
+        <div align="center">
+            <img src="{% static 'images/upsidedownturtle.jpg' %}">
+        </div>
+    </p>
 
 {% endblock content %}
