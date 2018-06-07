@@ -7,6 +7,7 @@ class Concept(models.Model):
     description = models.TextField()
     long_description = models.TextField(null=False, blank=True, default='')
     area = models.CharField(max_length=255)
+    example = models.FileField(null=False, blank=True, default='')
     slug = models.SlugField(unique=True)
 
 
