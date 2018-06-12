@@ -5,8 +5,17 @@ from django.db import models
 class Concept(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    long_description = models.TextField(null=False, blank=True, default='')
-    area = models.CharField(max_length=255)
+    long_description = models.TextField(null=False, blank=True, default='', verbose_name='Long Description')
+    AREA_CHOICES = (('APP', 'Apps'),
+        ('DJG', 'Django'),
+        ('DOC', 'Docker'),
+        ('GEN', 'General'),
+        ('GIT', 'Git'),
+        ('HTML', 'HTML & CSS'),
+        ('JS', 'JavaScript'),
+        ('JQ', 'jQuery'),
+        ('PY','Python'))
+    area = models.CharField(max_length=255, choices=AREA_CHOICES, verbose_name='Area', default='APP')
     example = models.FileField(null=False, blank=True, default='')
     slug = models.SlugField(unique=True)
 
