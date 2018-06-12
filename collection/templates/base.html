@@ -5,6 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
         <title><!-- we want to override page titles -->
             {% block title %}
@@ -13,24 +19,25 @@
         </title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
-        <style>
-                    html,header, footer, body, nav, div, img, a,ul, li, h1, h2{
+    <style>
+        html,header, footer, body, nav, div, img, a,ul, h1, h2{
             margin: 0;
-            padding: 0;
+            padding: .2rem;
             text-decoration: none;
             list-style-type: none;
 
         }
+
         * {
             box-sizing: border-box;
             font-family: arial;
             
         }
+
         html {
             font-size: 16px;
             
         }
-
 
         .column {
             float: left;
@@ -57,7 +64,7 @@
             border-collapse: collapse;
             border: 1px solid #ddd;
             table-layout: auto;
-            <!--width: 640px;-->
+            
         }
 
         th {
@@ -66,12 +73,14 @@
             width: 400px;
             border: 1px solid #ddd;
         }
+
         td {
             text-align: center;
             padding: 3px;
             width: 240px;
             border: 1px solid #ddd;
         }
+
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
@@ -81,6 +90,7 @@
             color: #ffffff;
             padding: 15px;
         }
+
         .footer {
             background-color: #0099cc;
             color: #ffffff;
@@ -88,17 +98,20 @@
             font-size: 12px;
             padding: 15px;
         }
+
         body {
             background-color: white;
             width: 100%;
             margin:0 auto;
             text-align: center;
         }
+
         a:link, a:visited {
             color:#555;
             font-weight: 700;
             transition: .2s color ease-in-out;
         }
+
         a:hover, a:active{
             color: #888;
         }
@@ -107,6 +120,7 @@
             padding: 1.5rem;
             line-height: 2.6rem;
         }
+
         section>p{
             text-indent: 2.6rem;
         }
@@ -123,53 +137,63 @@
             background-color: #add8e6;
             max-width: 100%
         }
+
         h3 {
             background-color: rgb(188, 232, 247);
         }
-        h4 {
 
+        h4 {
         }
+
         p {
             font-color: black;
         }
+
         img {
             max-width: 100%;
             height: auto;
          }
             
-            table {
-                font-family: arial, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-        
-            td,
-            th {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 8px;
-                
-            }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
             
-            td {
-                color: black;
-            }
+        }
+        
+        td {
+            color: black;
+        }
 
-            th {
-                color: black;
-                text-align: center;
-            }
+        th {
+            color: black;
+            text-align: center;
+        }
 
-            tr:nth-child(even) {
-                background-color: #dddddd;
-            }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
 
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-            .toggle-menu {
-            display: none;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .toggle-menu {
+        display: none;
+        }
+
+        .jumbotron {
+            background-color: #0099cc;
+            font-size: 400%;
+            color: white;
+            text-align: center;
         }
 
         .content {
@@ -186,14 +210,12 @@
             padding: 5px;
         }
 
-
         .site-title img{
             max-width: 100px;
             display: inline-block;
             vertical-align: middle;
 
         }
-
 
         .nav-list {
             list-style-type: none;
@@ -317,7 +339,7 @@
         }
 
 
-        </style>
+    </style>
 
         {% block header %}{% endblock header %}
     </head>
@@ -349,8 +371,12 @@
                     <li>
                         <a href="{% url 'commands' %}">Common Commands</a>
                     </li>
-                    <li>
+                    <li class="has-submenu">
                         <a href="#">Getting Started</a>
+                            <!-- <ul>
+                                <li><a href="#">Standard</a></li>
+                                <li><a href="#">w/ Docker</a></li>
+                            </ul> -->
                     </li>
                     <li>
                         <a href="{% url 'reference' %}">Reference</a>
@@ -376,14 +402,14 @@
         </header>
         <!-- as well as override content bits -->
         
-        
+        {% block jumbotron %}{% endblock jumbotron %}
         {% block content %}{% endblock content %}
 
         
 
         {% block footer %}
             <div class="footer">
-                <a href="{% url 'home' %}"><b>HOME</b> | 
+                <a href="{% url 'home' %}"><b>HOME</b> |
                 <a href="{% url 'about' %}"><b>ABOUT</b>
             </div>
         {% endblock footer%}
@@ -394,7 +420,7 @@
                 <style>
                     .column {
                         float: left;
-                        width: 14.28%;
+                        width: 14%;
                         padding: 0px;
                     }
         
@@ -413,31 +439,31 @@
                     <div class="row">
                         <div class="column">
                             <a href="https://www.djangoproject.com/" target="_blank">
-                                <img src="{% static 'images/django-hexbin.png' %}" height="50" width="50"></a>
+                                <img src="{% static 'images/django-hexbin.png' %}" height="48" width="48"></a>
                         </div>
                         <div class="column">
                             <a href="https://www.python.org/" target="_blank">
-                                <img src="{% static 'images/python_icon.png' %}" height="50" width="50"></a>
+                                <img src="{% static 'images/python_icon.png' %}" height="48" width="48"></a>
                         </div>
                         <div class="column">
                             <a href="https://bitbucket.org/petcoalm/" target="_blank">
-                                <img src="{% static 'images/bitbucketlogo.png' %}" height="50" width="50"></a>
+                                <img src="{% static 'images/bitbucketlogo.png' %}" height="48" width="48"></a>
                         </div>
                         <div class="column">
                             <a href="https://petcoalm.atlassian.net/wiki/spaces/BUSXS/overview" target="_blank">
-                                <img src="{% static 'images/confluencelogo.png' %}" height="50" width="50"></a>
+                                <img src="{% static 'images/confluencelogo.png' %}" height="48" width="48"></a>
                         </div>
                         <div class="column">
                             <a href="https://github.com/adamam2/hwproject" target="_blank">
-                                <img src="{% static 'images/githublogo.png' %}" height="50" width="50"></a>
+                                <img src="{% static 'images/githublogo.png' %}" height="48" width="48"></a>
                         </div>
                         <div class="column">
                             <a href="https://petcosxsw.slack.com/" target="_blank">
-                                <img src="{% static 'images/slacklogo.png' %}" height="50" width="50"></a>
+                                <img src="{% static 'images/slacklogo.png' %}" height="48" width="48"></a>
                         </div>
                         <div class="column">
                             <a href="https://trello.com/sxsw4/home" target="_blank">
-                                <img src="{% static 'images/trellologo.png' %}" height="50" width="50"></a>
+                                <img src="{% static 'images/trellologo.png' %}" height="48" width="48"></a>
                         </div>
                     </div>
                 

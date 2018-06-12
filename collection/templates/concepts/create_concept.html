@@ -7,14 +7,6 @@
 {% block content %}
     <h1>Create a Concept</h1>
 
-            <button onclick="goBack()">Cancel</button>
-            
-            <script>
-                function goBack() {
-                    window.history.back();
-                }
-            </script>
-
     <form role="form" action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}

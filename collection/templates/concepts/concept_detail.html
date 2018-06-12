@@ -8,16 +8,21 @@
     {{ concept.name }} - {{ block.super }}
 {% endblock title %}
 
+{% block jumbotron %}
+<div class="jumbotron">
+        {{ concept.name }}
+</div>
+{% endblock jumbotron %}
 
 {% block content %}
 
-
     
-        <h1>{{ concept.name }}</h1>
+        <!-- <h1>{{ concept.name }}</h1> -->
 
                 <p>
-                    <a href="{% url 'browse' %}"><input type=button value="Back to List"></a>
-                    <a href="{% url 'edit_concept' slug=concept.slug %}"><input type=button value="Edit"></a>
+                    <a href="{% url 'browse' %}" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-arrow-left" style="color:white"></span></a>
+                    <a href="{% url 'edit_concept' slug=concept.slug %}" class="btn btn-info btn-lg">
+                        <span class="glyphicon glyphicon-pencil"  style="color:white"></span><font color="white"> Edit</font></a>
                          
                 </p>
         <h3>Subject Area:</h3>
@@ -27,9 +32,10 @@
         <!-- <p>{{ concept.user }}</p> -->
         <h3>Concept:</h3>
             <p>{{ concept.long_description|safe }}</p>
+        <h3>Documents:</h3>
+            </p>{{ concept.example|safe }}</p>
 
         <!-- <p>{% lorem 2 p %}</p> -->
-       
-        
+
 
 {% endblock content %}

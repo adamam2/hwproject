@@ -59,22 +59,22 @@ def edit_concept(request, slug):
         })
 
 
-# def create_concept(request):
-#     from_class = ConceptForm
-#     if request.method == 'POST':
-#         form = form_class(request.POST)
-#         if form.is_valid():
-#             concept = form.save(commit=False)
-#             concept.user = request.user
-#             concept.slug = slugify(concept.name)
-#             concept.save()
-#             return redirect('concept_detail', slug=concept.slug)
-#         else:
-#             form = form_class()
+def create_concept(request):
+    from_class = ConceptForm
+    if request.method == 'POST':
+        form = form_class(request.POST)
+        if form.is_valid():
+            concept = form.save(commit=False)
+            concept.user = request.user
+            concept.slug = slugify(concept.name)
+            concept.save()
+            return redirect('concept_detail', slug=concept.slug)
+        else:
+            form = form_class()
 
-#         return render(request, 'concepts/create_concept.html', {
-#             'form': form,
-#         })
+        return render(request, 'concepts/create_concept.html', {
+            'form': form,
+        })
 
 
 def browse_by_name(request, initial=None):
