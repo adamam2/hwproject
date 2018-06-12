@@ -1,0 +1,105 @@
+<h3>Branching and Merging with Command Line</h3>
+<p>Make sure that you're in your project root folder, the one containing your manage.py file.</p>
+
+<h4>Update Local Repo<h4>
+<p>
+				<ol>
+								<li><b>$ cd</b> into folder with Local repository</li>
+								<li><b>$ git branch</b> to view the available branches
+												<ol>
+																<li><b>$ git checkout [branch name]</b> if existing and available on Local, or</li>
+																<li><b>$ git checkout --track origin/[branch name]</b> to create in Remote if a new branch (no spaces, '-' only)</li>
+												</ol>
+								</li>
+				<br>At this point, you should have the branch you want to work on checked out.
+				<br>
+
+								<li><b>$ git pull</b> will run a combo of Fetch/Pull updates from Remote & update Local</li>
+				</ol>
+</p>
+
+
+<h4>Start own branch</h4>
+<p>Local
+				<ol>
+								<li><b>$ git branch</b> to view available branches</li>
+								<li><b>$ git branch [branch name you want to create]</b> to create a new branch with a name you want</li>
+								<li><b>$ git checkout [branch name you want to work in - likely your newly created branch]</b> to checkout the branch</li>
+				</ol>
+</p>
+<p>Remote
+				<ol>
+								<li><b>$ git push origin [branch name you have checked out on local]</b> will push newly created branch to remote (ex. BitBucket, GitHub)</li>
+				</ol>
+</p>
+
+
+<h4>Check Git Logs</h4>
+<p><b>$ git log</b> shows logs/notes/messages for changes</p>
+
+
+<h4>Delete a branch</h4>
+<p>Local
+<ol>
+				<li><b>$ git checkout [name of another branch or main</b> in order to get out of the branch you wish to delete (if applicable)</li>
+				<li><b>$ git branch - D [branch name to delete]</b></li>
+</p>
+<p>Remote
+<ol>
+				<li>Delete branch in remote location manually</li>
+</ol>
+</p>
+
+
+<h4>Merge Latest</h4>
+<p><ol>
+				<li><b>$ git fetch</b></li>
+				<li><b>$ git checkout [primary branch ex. Main]</b> that contains all the updates I need.</li>
+				<li><b>$ git pull</b> to get all changes onto my local.</li>
+				<li><b>$ git checkout [my branch I want to work on]</b></li>
+				<li><b>$ git push</b></li>
+				<li><b>$ git merge [primary branch ex. Main]</b></li>
+				<li><b>esc: q</b> to exit screen</li>
+</ol>
+<b>Note:</b> If you are using a docker container, and you have makemigrations and migrate as a part of your steps, 
+you can run your docker commands to initiate the migrations. Otherwise, use <b>$ python manage.py migrate</b>.
+</p>
+
+
+<h4>BitBucket Merge</h4>
+<p>
+				<ol>
+								<li><b>$ git push</b></li>
+								<li>Login to BitBucket</li>
+								<li>Navigate to Pull Requests</li>
+								<li>Select "Create"
+								<ul>
+												<li>Left Side: Branch you're working in</li>
+												<li>Right Side: Branch to merge to</li>
+								</ul>
+								</li>
+								<li>Check for conflicts and resolve any open</li>
+								<li>Select "Delete Branch"</li>
+								<li>Select "Commit"</li>
+								<li>Select "Merge"</li>
+								<li>Select "Merge"</li>
+								<li>Go through process to delete local branch</li>
+								<li>Go through process to spin up a new branch</li>
+				</ol>
+</p>
+
+
+<h4>.gitignore</h4>
+<p><b>Note:</b>Certain files should not be commited to the repo. You can use .gitignore for these file types.
+				<ol>
+								<li><b>$ nano -w .gitignore</b></li>
+								<li>Enter file types, examples:
+												<ul>
+																<li>*.pyc</li>
+																<li>.idea/</li>
+												</ul>
+								</li>
+								<li>Hit Enter</li>
+				</ol>
+				<b>Note:</b> To exit: control+X, Y
+</p>
