@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class Concept(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, default='')
     description = models.TextField()
     long_description = models.TextField(null=False, blank=True, default='', verbose_name='Long Description')
     AREA_CHOICES = (('Apps', 'Apps'),

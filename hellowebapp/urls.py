@@ -50,7 +50,7 @@ urlpatterns = [
     path('downloads/', TemplateView.as_view(template_name='downloads.html'),
          name='downloads'),
     path('concepts/', RedirectView.as_view(pattern_name='browse', permanent=True)),
-    path('concepts/create/', views.concept_detail, name='create_concept'),
+    path('concepts/create/', views.create_concept, name='create_concept'),
     path('concepts/<slug>/', views.concept_detail, name='concept_detail'),
     path('concepts/<slug>/edit/', views.edit_concept, name='edit_concept'),
     

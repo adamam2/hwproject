@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from collection.forms import ConceptForm
 from collection.models import Concept
-# from django.template.defaultfilters import slugify
+from django.template.defaultfilters import slugify
 # from django.contrib.auth.decorators import login_required
 # from django.http import Http404
 
@@ -60,22 +60,20 @@ def edit_concept(request, slug):
 
 
 def create_concept(request):
-    from_class = ConceptForm
-    if request.method == 'POST':
-        form = form_class(request.POST)
+    if request.method == "POST":
+        form = ConceptForm(request.POST)
         if form.is_valid():
             concept = form.save(commit=False)
-            concept.user = request.user
+            # concept.author = request.user
+            # concept.published_date = timezone.now()
             concept.slug = slugify(concept.name)
             concept.save()
             return redirect('concept_detail', slug=concept.slug)
-        else:
-            form = form_class()
-
-        return render(request, 'concepts/create_concept.html', {
-            'form': form,
-        })
-
+    else:
+        form = ConceptForm()
+    return render(request, 'concepts/create_concept.html', {
+        'form': form
+    })
 
 def browse_by_name(request, initial=None):
     if initial:
@@ -84,10 +82,10 @@ def browse_by_name(request, initial=None):
     else:
         concepts = Concept.objects.all().order_by('name')
 
-        return render(request, 'search/search.html', {
-            'concepts': concepts,
-            'initial': initial,
-        })
+    return render(request, 'search/search.html', {
+        'concepts': concepts,
+        'initial': initial,
+    })
 
 
 
