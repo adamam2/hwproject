@@ -7,6 +7,7 @@ class Concept(models.Model):
     description = models.TextField()
     long_description = models.TextField(null=False, blank=True, default='', verbose_name='Long Description')
     AREA_CHOICES = (('Apps', 'Apps'),
+        ('Cache', 'Cache'),
         ('Django', 'Django'),
         ('Docker', 'Docker'),
         ('General', 'General'),
