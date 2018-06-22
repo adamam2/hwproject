@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} 
+    Share Form - {{ block.super }} 
+{% endblock title %} 
+
+{% block content %}
+    <style>
+        html,
+        p,
+        img,
+        h4,
+        section {
+            text-align: center;
+        }
+    </style>
+
+    <!-- Create a modal for this form view see page 196 to complete the data model and views-->
+
+    <h1>Share With A Friend</h1>
+        <p>Enter your friend's Name and Email below.</p>
+        <!-- <p>
+            <div align="center">
+                <img src="{% static 'images/warpug.jpg' %}">
+            </div>
+        </p> -->
+
+{% endblock content %}
