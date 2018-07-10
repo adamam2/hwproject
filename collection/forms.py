@@ -16,13 +16,6 @@ class ConceptForm(forms.ModelForm):
             'placeholder': "Write a short description..."
         }
     ))
-    long_description = forms.CharField(widget=forms.Textarea(
-        attrs={
-            'class': 'form-control',
-            'placeholder': "Write a long description...",
-            'size': 7
-        }
-    ))
     
     class Meta:
         model = Concept

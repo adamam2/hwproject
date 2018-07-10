@@ -6,8 +6,7 @@ from tinymce.models import HTMLField
 class Concept(models.Model):
     name = models.CharField(max_length=255, default='')
     description = models.TextField()
-    long_description = models.TextField(null=False, blank=True, default='', verbose_name='Long Description')
-    content = HTMLField(null=False, blank = True, default = '')
+    long_description = HTMLField(null=False, blank=True, default='', verbose_name='Long Description')
     AREA_CHOICES = (('Apps', 'Apps'),
         ('Cache', 'Cache'),
         ('Django', 'Django'),
