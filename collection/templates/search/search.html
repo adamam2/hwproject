@@ -13,30 +13,52 @@
         h4 {
             text-align: center;
         }
+        p {
+            align: center;
+        }
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+        }
     </style>
 
     <h1>
         Browse Concepts {% if initial %} Starting with
         '{{ initial|title }}'{% endif %}
     </h1><br>
+
+    <p>
     
-    <a href="{% url 'create_concept' %}" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-plus" style="color:white"></span>
-        <font color="white"> Create New</font></span>
-    </a>
-
-    <!-- <a href="{% url 'create_concept' %}" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-pencil" style="color:white"></span>
-        <font color="white"> Edit</font>
-    </a> -->
-
-    <!-- {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
-    <a href="{% url 'browse_by_name' initial=letter %}"
+    {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
+    <a href="{% url 'browse_by_name' initial=letter %}" class="btn btn-info btn-md" style="color:white"
         {% if initial == letter %}class="active"{% endif %}>
         {{ letter|upper }}
     </a>
-    {% endfor %} -->
+    {% endfor %}
 
+    <a href="{% url 'browse' %}" class="btn btn-info btn-md">
+        <span class="glyphicon glyphicon-refresh" style="color:white"></span>
+        <font color="white"></font>
+        </span>
+    </a>
+    <hr>
+
+    <a href="{% url 'create_concept' %}" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-plus" style="color:white"></span>
+        <font color="white"></font>
+        </span>
+    </a>
+    
+    <a href="{% url 'create_concept' %}" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-pencil" style="color:white"></span>
+        <font color="white"></font>
+    </a>
+    
     <ul>
         {% for concept in concepts %}
         <li><a href="{% url 'concept_detail' slug=concept.slug %}">
@@ -46,4 +68,5 @@
         <li>Sorry, no results!</li>
         {% endfor %}
     </ul><br>
+    </p>
 {% endblock content %}
