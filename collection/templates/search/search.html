@@ -35,17 +35,12 @@
     <p>
     
     {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
-    <a href="{% url 'browse_by_name' initial=letter %}" class="btn btn-info btn-md" style="color:white"
+    <a href="{% url 'browse_by_name' initial=letter %}" 
         {% if initial == letter %}class="active"{% endif %}>
         {{ letter|upper }}
     </a>
     {% endfor %}
-
-    <a href="{% url 'browse' %}" class="btn btn-info btn-md">
-        <span class="glyphicon glyphicon-refresh" style="color:white"></span>
-        <font color="white"></font>
-        </span>
-    </a>
+    
     <hr>
 
     <a href="{% url 'create_concept' %}" class="btn btn-info btn-lg">
@@ -53,10 +48,11 @@
         <font color="white"></font>
         </span>
     </a>
-    
-    <a href="{% url 'create_concept' %}" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-pencil" style="color:white"></span>
+
+    <a href="{% url 'browse' %}" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-refresh" style="color:white"></span>
         <font color="white"></font>
+        </span>
     </a>
     
     <ul>
