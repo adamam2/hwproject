@@ -64,8 +64,6 @@ def create_concept(request):
         form = ConceptForm(request.POST)
         if form.is_valid():
             concept = form.save(commit=False)
-            # concept.author = request.user
-            # concept.published_date = timezone.now()
             concept.slug = slugify(concept.name)
             concept.save()
             return redirect('concept_detail', slug=concept.slug)

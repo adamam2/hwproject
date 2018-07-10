@@ -1,5 +1,9 @@
 {% extends 'base.html' %} 
-{% load static %} 
+{% load static %}
+
+<script src="{% static 'myapp/js/tinymce/tinymce.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'myapp/js/tinymce/custom.js' %}"></script>
+
 {% block title %} 
     Create a Concept - {{ block.super }} 
 {% endblock title %} 

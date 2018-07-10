@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 #from django.contrib.auth.models import User
 
 # Create your models here.
@@ -6,6 +7,7 @@ class Concept(models.Model):
     name = models.CharField(max_length=255, default='')
     description = models.TextField()
     long_description = models.TextField(null=False, blank=True, default='', verbose_name='Long Description')
+    content = HTMLField(null=False, blank = True, default = '')
     AREA_CHOICES = (('Apps', 'Apps'),
         ('Cache', 'Cache'),
         ('Django', 'Django'),
@@ -20,11 +22,3 @@ class Concept(models.Model):
     example = models.FileField(null=False, blank=True, default='')
     slug = models.SlugField(unique=True)
 
-
-# TODO Build a Commands Data Model
-# TODO Review Pep 8 documentation
-# TODO Document spinning up a project using the command line
-
-# class Piechart(models.Model):
-    # labels = models.CharField(max_length=255)
-    # values = models.DecimalField(..., max_digits=100, decimal_places=2)

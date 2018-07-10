@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    # 'registration',
+    # 'registration', review the oauth registration created in services project
     'bootstrap3',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -118,8 +119,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Caching
-CACHE_BACKEND = 'db://cache_table'
+# # Caching
+# CACHE_BACKEND = 'db://cache_table'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/

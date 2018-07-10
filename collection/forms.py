@@ -26,4 +26,4 @@ class ConceptForm(forms.ModelForm):
     
     class Meta:
         model = Concept
-        fields = ('name', 'description', 'area', 'long_description',)
+        fields = ('name', 'description', 'area', 'long_description')
